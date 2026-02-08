@@ -13,29 +13,27 @@ function StatusBadge({ status }: { status: "LIVE" | "BUILDING" }) {
   );
 }
 
-// F-shaped logo: 3 cols x 5 rows, 1 = filled, 0 = empty
+// F-shaped logo: 3x3 grid, filled squares form an F
 const fGrid = [
   [1, 1, 1],
-  [1, 0, 0],
   [1, 1, 0],
   [1, 0, 0],
-  [1, 0, 0],
 ];
-const fColors = ["#C4A67D", "#8B8178", "#A69882", "#9B9B82", "#B8A88A", "#7A7268", "#B8A98E", "#A69882"];
+const fColors = ["#C4A67D", "#8B8178", "#A69882", "#9B9B82", "#B8A88A", "#7A7268"];
 
-function FLogo({ size = 36 }: { size?: number }) {
-  const cellSize = size / 5; // 5 rows determines cell size
+function FLogo({ size = 32 }: { size?: number }) {
   const gap = 2;
+  const cellSize = (size - gap * 2) / 3;
   return (
     <div
       className="shrink-0"
       style={{
         display: "grid",
         gridTemplateColumns: `repeat(3, ${cellSize}px)`,
-        gridTemplateRows: `repeat(5, ${cellSize}px)`,
+        gridTemplateRows: `repeat(3, ${cellSize}px)`,
         gap: `${gap}px`,
-        width: cellSize * 3 + gap * 2,
-        height: cellSize * 5 + gap * 4,
+        width: size,
+        height: size,
       }}
     >
       {fGrid.flat().map((filled, i) => (

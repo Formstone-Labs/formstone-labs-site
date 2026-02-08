@@ -1,16 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-  <!-- 3x5 F grid, each cell ~9x5.6, gap 2 -->
-  <!-- Row 0: 3 filled -->
-  <rect x="0" y="0" width="9" height="5" rx="1" fill="#C4A67D"/>
-  <rect x="11" y="0" width="9" height="5" rx="1" fill="#8B8178"/>
-  <rect x="22" y="0" width="9" height="5" rx="1" fill="#A69882"/>
-  <!-- Row 1: 1 filled -->
-  <rect x="0" y="7" width="9" height="5" rx="1" fill="#9B9B82"/>
-  <!-- Row 2: 2 filled -->
-  <rect x="0" y="14" width="9" height="5" rx="1" fill="#B8A88A"/>
-  <rect x="11" y="14" width="9" height="5" rx="1" fill="#7A7268"/>
-  <!-- Row 3: 1 filled -->
-  <rect x="0" y="21" width="9" height="5" rx="1" fill="#B8A98E"/>
-  <!-- Row 4: 1 filled -->
-  <rect x="0" y="28" width="9" height="5" rx="1" fill="#A69882"/>
+  <!-- 3x3 F grid, each cell ~9.3px, gap 2 -->
+  <!-- Row 0: all 3 filled -->
+  <rect x="0" y="0" width="9" height="9" rx="1" fill="#C4A67D"/>
+  <rect x="11" y="0" width="9" height="9" rx="1" fill="#8B8178"/>
+  <rect x="22" y="0" width="9" height="9" rx="1" fill="#A69882"/>
+  <!-- Row 1: 2 filled -->
+  <rect x="0" y="11" width="9" height="9" rx="1" fill="#9B9B82"/>
+  <rect x="11" y="11" width="9" height="9" rx="1" fill="#B8A88A"/>
+  <!-- Row 2: 1 filled -->
+  <rect x="0" y="22" width="9" height="9" rx="1" fill="#7A7268"/>
 </svg>
