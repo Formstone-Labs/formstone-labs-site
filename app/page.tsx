@@ -13,30 +13,77 @@ function StatusBadge({ status }: { status: "LIVE" | "BUILDING" }) {
   );
 }
 
-function ColorGrid({ colors, size = 2 }: { colors: string[]; size?: number }) {
-  const px = size === 3 ? "28px" : "56px";
+// F-shaped logo: 4 cols x 5 rows, 1 = filled, 0 = empty
+const fGrid = [
+  [1, 1, 1, 1],
+  [1, 0, 0, 0],
+  [1, 1, 1, 0],
+  [1, 0, 0, 0],
+  [1, 0, 0, 0],
+];
+const fColors = ["#C4A67D", "#8B8178", "#A69882", "#9B9B82", "#B8A88A", "#7A7268", "#B8A98E", "#A69882", "#8B8178", "#C4A67D", "#9B9B82", "#7A7268"];
+
+function FLogo({ size = 32 }: { size?: number }) {
+  const cellSize = size / 5; // 5 rows determines cell size
+  const gap = 2;
   return (
     <div
-      className="shrink-0 gap-1"
+      className="shrink-0"
       style={{
         display: "grid",
-        gridTemplateColumns: `repeat(${size}, 1fr)`,
-        width: px,
-        height: px,
+        gridTemplateColumns: `repeat(4, ${cellSize}px)`,
+        gridTemplateRows: `repeat(5, ${cellSize}px)`,
+        gap: `${gap}px`,
+        width: cellSize * 4 + gap * 3,
+        height: cellSize * 5 + gap * 4,
       }}
     >
-      {colors.map((c, i) => (
-        <div key={i} className="rounded-sm" style={{ backgroundColor: c }} />
+      {fGrid.flat().map((filled, i) => (
+        <div
+          key={i}
+          className="rounded-[1px]"
+          style={{
+            backgroundColor: filled ? fColors[i % fColors.length] : "transparent",
+          }}
+        />
       ))}
     </div>
   );
 }
 
-const logoColors = [
-  "#C4A67D", "#8B8178", "#A69882",
-  "#9B9B82", "#B8A98E", "#8B8178",
-  "#A69882", "#C4A67D", "#9B9B82",
-];
+function CardPattern({ colors, variant = 0 }: { colors: string[]; variant?: number }) {
+  // Abstract 3x3 formstone patterns for project cards (not F-shaped)
+  const patterns = [
+    // diagonal
+    [[1,0,1],[0,1,0],[1,0,1]],
+    // L-shape
+    [[1,0,0],[1,0,0],[1,1,1]],
+  ];
+  const grid = patterns[variant % patterns.length];
+  const cellSize = 14;
+  const gap = 2;
+  return (
+    <div
+      className="shrink-0"
+      style={{
+        display: "grid",
+        gridTemplateColumns: `repeat(3, ${cellSize}px)`,
+        gridTemplateRows: `repeat(3, ${cellSize}px)`,
+        gap: `${gap}px`,
+      }}
+    >
+      {grid.flat().map((filled, i) => (
+        <div
+          key={i}
+          className="rounded-[1px]"
+          style={{
+            backgroundColor: filled ? colors[i % colors.length] : "transparent",
+          }}
+        />
+      ))}
+    </div>
+  );
+}
 
 const projects = [
   {
@@ -60,7 +107,7 @@ export default function Home() {
     <main className="min-h-screen">
       {/* Nav */}
       <nav className="px-6 py-6 max-w-3xl mx-auto flex items-center gap-2.5">
-        <ColorGrid colors={logoColors} size={3} />
+        <FLogo size={32} />
         <span className="text-base font-semibold font-[family-name:var(--font-sans)] tracking-tight text-[#1A1A1A]">
           Formstone Labs
         </span>
@@ -106,7 +153,7 @@ export default function Home() {
               key={p.name}
               className="bg-white rounded-2xl shadow-sm p-6 flex items-start gap-5"
             >
-              <ColorGrid colors={p.colors} size={2} />
+              <CardPattern colors={p.colors} variant={projects.indexOf(p)} />
               <div className="flex-1 min-w-0">
                 <div className="flex items-center justify-between mb-1">
                   <h3 className="text-lg font-bold font-[family-name:var(--font-serif)] text-[#1A1A1A]">
