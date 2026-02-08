@@ -3,18 +3,15 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Formstone Labs",
-  description:
-    "A Connecticut-based software studio building tools for healthcare data and consumer health.",
+  description: "A small software studio based in Connecticut.",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="antialiased">{children}</body>
+      <body className="bg-[#F5F3EE] text-[#2C2C2C] antialiased" style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}>
+        {children}
+      </body>
     </html>
   );
 }
