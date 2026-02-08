@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+@theme {
+  --color-cream: #F5F3EE;
+  --color-maroon: #7A3030;
+  --color-heading: #1A1A1A;
+  --color-body: #4A4A4A;
+  --color-muted: #8A8A7A;
+  --color-badge-bg: #FDF0E0;
+  --color-badge-text: #B8723A;
+}
+
+html {
+  scroll-behavior: smooth;
+}
