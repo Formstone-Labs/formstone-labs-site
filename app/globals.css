@@ -13,3 +13,8 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Refined selection color */
+::selection {
+  background-color: rgba(122, 48, 48, 0.12);
+}
