@@ -207,9 +207,9 @@ export default function Home() {
 
       <section className="px-6 sm:px-8 pb-10 max-w-[720px] mx-auto">
         <SectionLabel>About</SectionLabel>
-        <p className="text-[1.05rem] text-[#555] leading-[1.7] max-w-lg font-[family-name:var(--font-sans)]">
-          A small software studio building focused, useful products in
-          healthcare data and consumer health.
+        <p className="text-[1.05rem] text-[#555] leading-[1.7] max-w-xl font-[family-name:var(--font-sans)]">
+          <span className="block">A small software studio building focused, useful products.</span>
+          <span className="block">We work in healthcare data and consumer health.</span>
         </p>
       </section>
 
