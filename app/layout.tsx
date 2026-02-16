@@ -20,6 +20,11 @@ export const metadata: Metadata = {
   title: "Formstone Labs",
   description:
     "A small software studio building focused, useful products in healthcare data and consumer health.",
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
