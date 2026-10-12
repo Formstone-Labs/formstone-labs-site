@@ -132,9 +132,9 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="mx-auto min-h-screen w-full max-w-[1100px] px-6 sm:px-8">
       {/* Nav */}
-      <nav className="px-6 sm:px-8 lg:px-12 py-6 flex items-center gap-3">
+      <nav className="py-6 flex items-center gap-3">
         <FLogo size={28} />
         <span className="text-[15px] font-semibold font-[family-name:var(--font-sans)] tracking-tight text-[#1A1A1A]">
           Formstone Labs
@@ -142,17 +142,17 @@ export default function Home() {
       </nav>
 
       {/* Hero */}
-      <section className="px-6 sm:px-8 lg:px-12 py-12 sm:py-16">
+      <section className="py-10 sm:py-12">
         <h1 className="text-[2.5rem] sm:text-5xl lg:text-[3.5rem] font-bold font-[family-name:var(--font-serif)] text-[#1A1A1A] mb-6 leading-[1.1] tracking-[-0.02em]">
           <span className="text-[#7A3030]">Useful</span> software for healthcare and everyday life.
         </h1>
-        <p className="text-lg sm:text-[1.2rem] text-[#555] leading-[1.7] max-w-none mb-0 font-[family-name:var(--font-sans)] font-normal">
+        <p className="text-lg sm:text-[1.2rem] text-[#555] leading-[1.7] max-w-[65ch] mb-0 font-[family-name:var(--font-sans)] font-normal">
           Formstone Labs is an independent software studio building tools for healthcare data and consumer health.
         </p>
       </section>
 
       {/* Formstone divider */}
-      <div className="px-6 sm:px-8 lg:px-12">
+      <div>
         <div
           className="h-px w-full"
           style={{
@@ -163,16 +163,16 @@ export default function Home() {
       </div>
 
       {/* Projects */}
-      <section id="projects" className="px-6 sm:px-8 lg:px-12 py-16">
+      <section id="projects" className="py-10 sm:py-12">
         <SectionLabel>What We&apos;re Building</SectionLabel>
-        <h2 className="text-3xl sm:text-[2.25rem] font-bold font-[family-name:var(--font-serif)] text-[#1A1A1A] mb-10 tracking-[-0.01em]">
+        <h2 className="text-3xl sm:text-[2.25rem] font-bold font-[family-name:var(--font-serif)] text-[#1A1A1A] mb-6 tracking-[-0.01em]">
           Projects
         </h2>
-        <div className="space-y-4">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           {projects.map((p, i) => (
             <div
               key={p.name}
-              className="bg-white/80 backdrop-blur-sm rounded-xl border border-[#E8E5DF] shadow-[0_1px_3px_rgba(0,0,0,0.04)] p-6 sm:p-7 flex items-start gap-5 transition-all duration-300 hover:shadow-[0_4px_16px_rgba(0,0,0,0.06)] hover:border-[#D8D5CF]"
+              className="bg-white/80 backdrop-blur-sm rounded-xl border border-[#E8E5DF] shadow-[0_1px_3px_rgba(0,0,0,0.04)] p-6 flex items-start gap-4 transition-all duration-300 hover:shadow-[0_4px_16px_rgba(0,0,0,0.06)] hover:border-[#D8D5CF]"
             >
               <div className="pt-1">
                 <CardPattern colors={p.colors} variant={i} />
@@ -194,9 +194,9 @@ export default function Home() {
       </section>
 
       {/* About + Contact */}
-      <div className="px-6 sm:px-8 lg:px-12">
+      <div>
         <div
-          className="h-px w-full mb-16"
+          className="h-px w-full mb-10 sm:mb-12"
           style={{
             background:
               "linear-gradient(90deg, transparent 0%, #D8D5CF 30%, #D8D5CF 70%, transparent 100%)",
@@ -204,9 +204,9 @@ export default function Home() {
         />
       </div>
 
-      <section className="px-6 sm:px-8 lg:px-12 pb-10">
+      <section className="pb-8">
         <SectionLabel>About</SectionLabel>
-        <p className="text-[1.05rem] text-[#555] leading-[1.7] font-[family-name:var(--font-sans)]">
+        <p className="max-w-[65ch] text-[1.05rem] text-[#555] leading-[1.7] font-[family-name:var(--font-sans)]">
           Formstone Labs is run by{" "}
           <a
             href="https://nathanielweiner.com"
@@ -218,7 +218,7 @@ export default function Home() {
         </p>
       </section>
 
-      <section className="px-6 sm:px-8 lg:px-12 pb-16">
+      <section className="pb-10 sm:pb-12">
         <SectionLabel>Contact</SectionLabel>
         <a
           href="mailto:nate@formstonelabs.com"
@@ -229,7 +229,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="px-6 sm:px-8 lg:px-12 py-8 border-t border-[#E8E5DF]">
+      <footer className="py-6 border-t border-[#E8E5DF]">
         <p className="text-[13px] text-[#AAA] font-[family-name:var(--font-sans)] tracking-wide">
           © 2026 Formstone Labs LLC
         </p>
