@@ -144,11 +144,10 @@ export default function Home() {
       {/* Hero */}
       <section className="px-6 sm:px-8 pt-20 pb-20 sm:pt-28 sm:pb-24 max-w-[720px] mx-auto">
         <h1 className="text-[2.5rem] sm:text-5xl lg:text-[3.5rem] font-bold font-[family-name:var(--font-serif)] text-[#1A1A1A] mb-6 leading-[1.1] tracking-[-0.02em]">
-          Software <span className="text-[#7A3030]">built</span> to last.
+          <span className="text-[#7A3030]">Useful</span> software for healthcare and everyday life.
         </h1>
         <p className="text-lg sm:text-[1.2rem] text-[#555] leading-[1.7] max-w-none mb-0 font-[family-name:var(--font-sans)] font-normal">
-          We make tools that stand the test of time. No shortcuts,
-          no&nbsp;compromises — just solid software, carefully made.
+          Formstone Labs is an independent software studio building tools for healthcare data and consumer health.
         </p>
       </section>
 
@@ -208,8 +207,14 @@ export default function Home() {
       <section className="px-6 sm:px-8 pb-10 max-w-[720px] mx-auto">
         <SectionLabel>About</SectionLabel>
         <p className="text-[1.05rem] text-[#555] leading-[1.7] max-w-xl font-[family-name:var(--font-sans)]">
-          <span className="block">A small software studio building focused, useful products.</span>
-          <span className="block">We work in healthcare data and consumer health.</span>
+          Formstone Labs is run by{" "}
+          <a
+            href="https://nathanielweiner.com"
+            className="underline underline-offset-[5px] decoration-[#D0CEC8] hover:decoration-[#7A3030] transition-colors duration-200"
+          >
+            Nathaniel Weiner
+          </a>
+          , a healthcare software builder and co-founder of Avhana Health, which was acquired by Amalgam Rx in 2021. It’s a home for independent projects and experiments.
         </p>
       </section>
 
